@@ -8,9 +8,41 @@
     <icon/>
     <properties>
         <propertyGroup caption="General">
-            <property key="sampleText" type="string" required="false">
-                <caption>Default value</caption>
-                <description>Sample text input</description>
+        <property key="shortcuts" type="object" isList="true" required="true">
+                <caption>Shortcuts</caption>
+                <description>Shortcuts when widget is triggered</description>
+                <properties>
+                    <propertyGroup caption="Group as table">
+                        <property key="action" type="action" required="false">
+                            <caption>Action</caption>
+                            <description>Action that will be called when the key (combination) is pressed.</description>
+                        </property>
+                        <property key="code" type="string" required="true">
+                            <caption>Code</caption>
+                            <description>Code of the key that is triggered, can be found on e.g. https://keycode.info/, make sure you use event.code (a is KeyA)</description>
+                        </property>
+                        <property key="altKey" type="boolean" required="true" defaultValue="false">
+                            <caption>Alt key</caption>
+                            <description>Only trigger event when alt key is pressed.</description>
+                        </property>
+                        <property key="ctrlKey" type="boolean" required="true" defaultValue="false">
+                            <caption>Ctrl key</caption>
+                            <description>Only trigger event when ctrl key is pressed.</description>
+                        </property>
+                        <property key="metaKey" type="boolean" required="true" defaultValue="false">
+                            <caption>Meta key</caption>
+                            <description>Only trigger event when meta key is pressed.</description>
+                        </property>
+                        <property key="shiftKey" type="boolean" required="true" defaultValue="false">
+                            <caption>Shift key</caption>
+                            <description>Only trigger event when shift key is pressed.</description>
+                        </property>
+                    </propertyGroup>
+                </properties>
+            </property>
+            <property key="disableOnInputFocus" type="boolean" required="true" defaultValue="false">
+                <caption>Disable on input focus</caption>
+                <description>Whether or not to disable the keyboard shortcut when an input field is focussed.</description>
             </property>
         </propertyGroup>
     </properties>
