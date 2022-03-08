@@ -1,8 +1,5 @@
 import { Component, createElement } from "react";
 
-import { HelloWorldSample } from "./components/HelloWorldSample";
-import "./ui/KeyboardShortcut.css";
-
 export class KeyboardShortcut extends Component {
     constructor(props) {
         super(props);
@@ -51,6 +48,6 @@ export class KeyboardShortcut extends Component {
 
     render() {
         //not when there is popup demo
-        return <div className={this.props.className}></div>;
+        return <div className={this.props.class}></div>;
     }
 }
