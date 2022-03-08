@@ -29,10 +29,6 @@
                             <caption>Ctrl key</caption>
                             <description>Only trigger event when ctrl key is pressed.</description>
                         </property>
-                        <property key="metaKey" type="boolean" required="true" defaultValue="false">
-                            <caption>Meta key</caption>
-                            <description>Only trigger event when meta key is pressed.</description>
-                        </property>
                         <property key="shiftKey" type="boolean" required="true" defaultValue="false">
                             <caption>Shift key</caption>
                             <description>Only trigger event when shift key is pressed.</description>

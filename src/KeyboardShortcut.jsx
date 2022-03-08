@@ -14,30 +14,29 @@ export class KeyboardShortcut extends Component {
     }
 
     keyDown(e) {
-        // if input is selected and these keys should be ignored, do nothing
+        // If input is selected and this is disabled, do nothing
         if (e.target.localName === "input") {
             if (this.props.disableOnInputFocus) {
                 return;
             }
         }
         let shortcutAction;
+        // Check if keypress is configures as shortcut
         for (const key in this.props.shortcuts) {
             const shortcut = this.props.shortcuts[key];
             if (
                 e.code === shortcut.code &&
                 e.altKey === shortcut.altKey &&
                 e.ctrlKey === shortcut.ctrlKey &&
-                e.metaKey === shortcut.metaKey &&
                 e.shiftKey === shortcut.shiftKey
             ) {
                 shortcutAction = shortcut.action;
             }
         }
 
-        // if key combo
         if (shortcutAction !== undefined) {
             e.preventDefault();
-            // Don't trigger action if it was triggered because of a repeat
+            // Don't trigger action if it was triggered because of a repeat, otherwise action will be triggered multiple times
             if (!e.repeat) {
                 if (shortcutAction && shortcutAction.canExecute) {
                     shortcutAction.execute();
@@ -47,7 +46,6 @@ export class KeyboardShortcut extends Component {
     }
 
     render() {
-        //not when there is popup demo
         return <div className={this.props.class}></div>;
     }
 }
