@@ -12,7 +12,7 @@
                 <caption>Shortcuts</caption>
                 <description>Shortcuts when widget is triggered</description>
                 <properties>
-                    <propertyGroup caption="Group as table">
+                    <propertyGroup caption="Shortcut">
                         <property key="action" type="action" required="false">
                             <caption>Action</caption>
                             <description>Action that will be called when the key (combination) is pressed.</description>

@@ -23,12 +23,28 @@ export class KeyboardShortcut extends Component {
                 return;
             }
         }
+        let shortcutAction;
+        for (const key in this.props.shortcuts) {
+            const shortcut = this.props.shortcuts[key];
+            if (
+                e.code === shortcut.code &&
+                e.altKey === shortcut.altKey &&
+                e.ctrlKey === shortcut.ctrlKey &&
+                e.metaKey === shortcut.metaKey &&
+                e.shiftKey === shortcut.shiftKey
+            ) {
+                shortcutAction = shortcut.action;
+            }
+        }
 
         // if key combo
-        if (true) {
+        if (shortcutAction !== undefined) {
             e.preventDefault();
+            // Don't trigger action if it was triggered because of a repeat
             if (!e.repeat) {
-                //call action
+                if (shortcutAction && shortcutAction.canExecute) {
+                    shortcutAction.execute();
+                }
             }
         }
     }
