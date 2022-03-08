@@ -11,6 +11,6 @@ If the action that the shortkey triggers needs a context object, place the widge
 
 
 ## Known limitations
-When the widget is placed on a page and the page also contains a popup, the shortcuts are still triggered when the popup is opened. If this can cause issues, you must add some logic to know whether the popup is open or not and add logic to the action to skip it when needed (see demo project).
+When the widget is placed on a page and the page also contains a popup, the shortcuts are still triggered when the popup is opened. If this can cause issues, you must add some logic to know whether the popup is open or not and add logic to the action to skip it when needed.
 
 
