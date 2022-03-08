@@ -1,24 +1,16 @@
 ## KeyboardShortcut
-[Trigger an action if a certain combination of keys is pressed]
+Trigger an action if a certain combination of keys is pressed
 
 ## Features
-[feature highlights]
+- Add one or many shortcuts that trigger an action
+- Check whether ctrl, alt, shift and/or meta key is pressed together with the key (e.g. ctrl+c)
 
 ## Usage
-[step by step instructions]
+Place the widget on the page and configure the hotkeys. Make sure you use the event codes (see e.g.https://keycode.info/ and use event.code) for the key configuration and combine the key with ctrl, shift, alt and/or meta key by marking the checkboxes if needed.
+If the action that the shortkey triggers needs a context object, place the widget within this dataview. Do not use the widget within a listview or templategrid. This would trigger the action for every item that is rendered.
 
-## Demo project
-[link to sandbox]
 
-## Issues, suggestions and feature requests
-[link to GitHub issues]
+## Known limitations
+When the widget is placed on a page and the page also contains a popup, the shortcuts are still triggered when the popup is opened. If this can cause issues, you must add some logic to know whether the popup is open or not and add logic to the action to skip it when needed (see demo project).
 
-## Development and contribution
 
-1. Install NPM package dependencies by using: `npm install`. If you use NPM v7.x.x, which can be checked by executing `npm -v`, execute: `npm install --legacy-peer-deps`.
-1. Run `npm start` to watch for code changes. On every change:
-    - the widget will be bundled;
-    - the bundle will be included in a `dist` folder in the root directory of the project;
-    - the bundle will be included in the `deployment` and `widgets` folder of the Mendix test project.
-
-[specify contribution]
