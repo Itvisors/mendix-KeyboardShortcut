@@ -14,8 +14,9 @@ export class KeyboardShortcut extends Component {
     }
 
     keyDown(e) {
+        const inputSelected = e.target.localName === "input";
         // If input is selected and this is disabled, do nothing
-        if (e.target.localName === "input") {
+        if (inputSelected) {
             if (this.props.disableOnInputFocus) {
                 return;
             }
@@ -38,8 +39,17 @@ export class KeyboardShortcut extends Component {
             e.preventDefault();
             // Don't trigger action if it was triggered because of a repeat, otherwise action will be triggered multiple times
             if (!e.repeat) {
-                if (shortcutAction && shortcutAction.canExecute) {
-                    shortcutAction.execute();
+                if (inputSelected) {
+                    e.target.blur();
+                    setTimeout(() => {
+                        if (shortcutAction && shortcutAction.canExecute) {
+                            shortcutAction.execute();
+                        }
+                    }, 100);
+                } else {
+                    if (shortcutAction && shortcutAction.canExecute) {
+                        shortcutAction.execute();
+                    }
                 }
             }
         }
