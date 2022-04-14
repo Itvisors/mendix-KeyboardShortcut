@@ -17,6 +17,10 @@
                             <caption>Action</caption>
                             <description>Action that will be called when the key (combination) is pressed.</description>
                         </property>
+                        <property key="showProgressBar" type="boolean" required="true" defaultValue="false">
+                            <caption>Show progress bar</caption>
+                            <description>Whether or not to show a blocking progress bar.</description>
+                        </property>
                         <property key="code" type="string" required="true">
                             <caption>Code</caption>
                             <description>Code of the key that is triggered, can be found on e.g. https://keycode.info/, make sure you use event.code (a is KeyA)</description>
@@ -32,10 +36,6 @@
                         <property key="shiftKey" type="boolean" required="true" defaultValue="false">
                             <caption>Shift key</caption>
                             <description>Only trigger event when shift key is pressed.</description>
-                        </property>
-                        <property key="showProgressBar" type="boolean" required="true" defaultValue="false">
-                            <caption>Show progress bar</caption>
-                            <description>Whether or not to show a blocking progress bar.</description>
                         </property>
                     </propertyGroup>
                 </properties>
