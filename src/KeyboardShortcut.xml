@@ -33,6 +33,10 @@
                             <caption>Shift key</caption>
                             <description>Only trigger event when shift key is pressed.</description>
                         </property>
+                        <property key="showProgressBar" type="boolean" required="true" defaultValue="false">
+                            <caption>Show progress bar</caption>
+                            <description>Whether or not to show a blocking progress bar.</description>
+                        </property>
                     </propertyGroup>
                 </properties>
             </property>
