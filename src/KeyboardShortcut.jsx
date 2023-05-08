@@ -49,6 +49,10 @@ export class KeyboardShortcut extends Component {
                 return;
             }
         }
+        // let test = mx.ui.getContentForm().path;
+        // var y = test.split('/');
+        // var z = y[1].split('.');
+        // console.log(z[0]);
 
         let shortcutAction;
         let shortcutActionKey;
