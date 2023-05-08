@@ -49,10 +49,11 @@ export class KeyboardShortcut extends Component {
                 return;
             }
         }
-        // let test = mx.ui.getContentForm().path;
-        // var y = test.split('/');
-        // var z = y[1].split('.');
-        // console.log(z[0]);
+        if (this.props.disableOnPopupOpen) {
+            if (document.getElementsByClassName('modal-dialog').length > 0) {
+                return;
+            }
+        }
 
         let shortcutAction;
         let shortcutActionKey;

@@ -44,6 +44,10 @@
                 <caption>Disable on input focus</caption>
                 <description>Whether or not to disable the keyboard shortcut when an input field is focussed.</description>
             </property>
+            <property key="disableOnPopupOpen" type="boolean" required="true" defaultValue="false">
+                <caption>Disable on popup open</caption>
+                <description>Whether or not to disable the keyboard shortcut when a popup is open (checks whether class '.modal-dialog' is found on the page).</description>
+            </property>
         </propertyGroup>
     </properties>
 </widget>
