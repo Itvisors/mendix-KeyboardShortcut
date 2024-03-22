@@ -4,8 +4,8 @@ export class KeyboardShortcut extends Component {
     constructor(props) {
         super(props);
         this.handleKeyDown = this.keyDown.bind(this);
-        this.pid;
-        this.shortcutActionKey;
+        this.pid = undefined;
+        this.shortcutActionKey = undefined;
     }
     componentDidMount() {
         window.addEventListener("keydown", this.handleKeyDown);
@@ -17,8 +17,8 @@ export class KeyboardShortcut extends Component {
             mx.ui.hideProgress(this.pid);
         }
     }
-    
-    componentDidUpdate () {
+
+    componentDidUpdate() {
         if (this.shortcutActionKey) {
             if (this.props.shortcuts[this.shortcutActionKey].action.isExecuting === false) {
                 if (this.pid) {
@@ -30,7 +30,7 @@ export class KeyboardShortcut extends Component {
         }
     }
 
-    executeAction (shortcutAction, shortcutActionKey, showProgressBar) {
+    executeAction(shortcutAction, shortcutActionKey, showProgressBar) {
         // Call action only when old action is finished (so if shortcutActionKey is empty)
         if (!this.shortcutActionKey && shortcutAction && shortcutAction.canExecute) {
             if (showProgressBar) {
@@ -50,7 +50,7 @@ export class KeyboardShortcut extends Component {
             }
         }
         if (this.props.disableOnPopupOpen) {
-            if (document.getElementsByClassName('modal-dialog').length > 0) {
+            if (document.getElementsByClassName("modal-dialog").length > 0) {
                 return;
             }
         }
@@ -62,7 +62,7 @@ export class KeyboardShortcut extends Component {
         for (const key in this.props.shortcuts) {
             const shortcut = this.props.shortcuts[key];
             if (
-                e.code === shortcut.code &&
+                ((shortcut.useCode && e.code === shortcut.code) || (!shortcut.useCode && e.key === shortcut.key)) &&
                 e.altKey === shortcut.altKey &&
                 e.ctrlKey === shortcut.ctrlKey &&
                 e.shiftKey === shortcut.shiftKey

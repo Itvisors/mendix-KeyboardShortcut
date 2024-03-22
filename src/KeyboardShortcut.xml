@@ -21,9 +21,18 @@
                             <caption>Show progress bar</caption>
                             <description>Whether or not to show a blocking progress bar.</description>
                         </property>
-                        <property key="code" type="string" required="true">
+                        <property key="useCode" type="boolean" required="true" defaultValue="true">
+                            <caption>Use Code</caption>
+                            <description>true if you want to use the phicical key (code). False if you want to use the key value.</description>
+                        </property>
+                        <property key="code" type="string" required="false">
                             <caption>Code</caption>
-                            <description>Code of the key that is triggered, can be found on e.g. https://keycode.info/, make sure you use event.code (a is KeyA)</description>
+                            <description>The phisical key that is triggered, can be found on e.g. https://keycode.info/, make sure you use event.code (a is KeyA)</description>
+                        </property>
+                        <property key="key" type="string" required="false">
+                            <caption>Key</caption>
+                            <description>Value of the key that is triggered, can be found on e.g. https://keycode.info/, make sure you use event.key.
+This key can be different from the code for e.g. azerty, where the phisical key q is actually an a. Also when you use for example the combination shift + 1, ! is the key.</description>
                         </property>
                         <property key="altKey" type="boolean" required="true" defaultValue="false">
                             <caption>Alt key</caption>
